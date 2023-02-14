@@ -15,11 +15,13 @@ Install it at: [vscode Marketplace](https://marketplace.visualstudio.com/items?i
 
 An OpenAI API key with permissions to access the GPT-3 service is required before using. For more information on how to get a key, visit [OpenAI's website](https://openai.com/api/).
 
-Set your OpenAI key to `"aiRename.openAiApiKey"` in your vs code `settings.json` or `Open Ai Api Key` in the UI.
+Set your OpenAI key to `"aiRename.openAiApiKey"` in your vs code `settings.json` or `Open Ai Api Key` on UI:
 
-Simply use command `"AI Rename: Rename` to generate the choices for the symbol under cursor, select an item and it'll rename it for you.
+![key-config](./imgs/key-config.png)
 
-You can bind this command to any hotkeys you want.
+Then, you can simply use command `"AI Rename: Rename` to generate the choices for the symbol under cursor, select an item and it'll rename it for you.
+
+You can bind this command to any shortcuts for convenience.
 
 See the Demo:
 
