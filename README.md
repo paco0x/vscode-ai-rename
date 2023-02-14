@@ -7,7 +7,7 @@
 
 ## Requirements
 
-An OpenAI API key with permissions to access the GPT-3 service. For more information on how to get a key, visit OpenAI's website.
+An OpenAI API key with permissions to access the GPT-3 service. For more information on how to get a key, visit [OpenAI's website](https://openai.com/api/).
 
 Set your OpenAI key to `"aiRename.openAiApiKey"` in your vs code `settings.json` or `Open Ai Api Key` in the UI.
 
