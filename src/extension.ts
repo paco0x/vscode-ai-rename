@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { renameSymbolAtOffset } from "./openai";
+import { renameSymbol } from "./openai";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -35,14 +35,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         let choices: Set<string>;
         try {
-            choices = await renameSymbolAtOffset(
-                apiKey,
-                maxChoicesNum,
-                maxToken,
-                temperature,
-                document.getText(),
-                document.offsetAt(curPos)
-            );
+            choices = await renameSymbol(apiKey, maxChoicesNum, maxToken, temperature, document.getText(), curPos);
             console.log("new names: ", choices);
         } catch (error) {
             vscode.window.showErrorMessage(`AI Rename: Request failed: ${error}`);

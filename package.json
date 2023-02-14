@@ -59,7 +59,7 @@
         "aiRename.maxCharactersNum": {
           "displayName": "Max Number Characters of Document",
           "type": "number",
-          "default": 2000,
+          "default": 5000,
           "description": "Maximum number of characters of the document when calling the command `ai-rename.rename`, don't set it too high since it'll send all the document to openAI"
         }
       }

@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { Position } from "vscode";
 
 interface Choice {
     text: string;
@@ -8,15 +9,15 @@ interface Response {
     choices: Array<Choice>;
 }
 
-export async function renameSymbolAtOffset(
+export async function renameSymbol(
     apiKey: string,
     n: number,
     maxToken: number,
     temperature: number,
     codeText: string,
-    offset: number
+    pos: Position
 ) {
-    const prompt = `I'll give a code text in {[@@(CODE)@@]} format, rename the symbol at offset ${offset} in CODE, the new name should follow the naming convention of the programming language in the code, and should be based on the context of the code. The new name cannot be conflicted with other names in the context of the symbol. You only need to return the new name without any other string. {[@@(${codeText})@@]} `;
+    const prompt = `I'll give a bunch of code in {[@@(CODE)@@]} format, CODE is the code text you needed. Rename the symbol at the ${pos.line} line, the ${pos.character} character in CODE, the new name should follow the naming convention of the programming language in the code, and should be based on the context of the code. The new name cannot be conflicted with other names in the context of the symbol. You only need to return the new name without any other string. {[@@(${codeText})@@]} `;
 
     const payload = {
         model: "text-davinci-003",
