@@ -1,0 +1,46 @@
+import fetch from "node-fetch";
+
+interface Choice {
+    text: string;
+}
+
+interface Response {
+    choices: Array<Choice>;
+}
+
+export async function renameSymbolAtOffset(
+    apiKey: string,
+    n: number,
+    maxToken: number,
+    temperature: number,
+    codeText: string,
+    offset: number
+) {
+    const prompt = `I'll give a code text in {[@@(CODE)@@]} format, rename the symbol at offset ${offset} in CODE, the new name should follow the naming convention of the programming language in the code, and should be based on the context of the code. The new name cannot be conflicted with other names in the context of the symbol. You only need to return the new name without any other string. {[@@(${codeText})@@]} `;
+
+    const payload = {
+        model: "text-davinci-003",
+        prompt,
+        n,
+        temperature: temperature,
+        max_tokens: maxToken,
+        stream: false,
+    };
+    const response = await fetch("https://api.openai.com/v1/completions", {
+        headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+        },
+        method: "POST",
+        body: JSON.stringify(payload),
+    });
+
+    const json: Response = await response.json();
+
+    const choices = json.choices.reduce((prev, cur) => {
+        const choice = cur.text.replace(/(\r\n|\n|\r)/gm, "");
+        return prev.add(choice);
+    }, new Set<string>());
+
+    return choices;
+}
