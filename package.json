@@ -7,7 +7,7 @@
   "publisher": "paco0x",
   "description": "naming is one of the hardest things in programming, this extension helps to rename symbols in codes by using openAI",
   "categories": [
-    "openAI"
+    "Formatters"
   ],
   "version": "0.0.3",
   "repository": {
