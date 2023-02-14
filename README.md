@@ -15,7 +15,7 @@ Install it at: [vscode Marketplace](https://marketplace.visualstudio.com/items?i
 
 An OpenAI API key with permissions to access the GPT-3 service is required before using. For more information on how to get a key, visit [OpenAI's website](https://openai.com/api/).
 
-Set your OpenAI key to `"aiRename.openAiApiKey"` in your vs code `settings.json` or `Open Ai Api Key` on UI:
+Set your OpenAI key to `aiRename.openAiApiKey"` in your vs code `settings.json` or `Open Ai Api Key` on UI:
 
 ![key-config](./imgs/key-config.png)
 
