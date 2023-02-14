@@ -1,11 +1,14 @@
 {
   "name": "ai-rename",
+  "displayName": "AI Rename",
   "author": {
     "name": "Paco"
   },
   "publisher": "paco0x",
-  "displayName": "ai-rename",
   "description": "naming is one of the hardest things in programming, this extension helps to rename symbols in codes by using openAI",
+  "categories": [
+    "openAI"
+  ],
   "version": "0.0.2",
   "repository": {
     "url": "https://github.com/paco0x/vscode-ai-rename",
@@ -15,9 +18,6 @@
   "engines": {
     "vscode": "^1.75.0"
   },
-  "categories": [
-    "Other"
-  ],
   "activationEvents": [
     "onCommand:ai-rename.rename"
   ],
