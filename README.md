@@ -1,3 +1,5 @@
+![icon](./imgs/icon.png)
+
 # `ai-rename` Visual Studio Code Extension
 
 > There are only two hard things in Computer Science: cache invalidation and naming things.
@@ -8,6 +10,8 @@
 It uses OpenAI's GPT-3 API to suggest and apply new names.
 
 ## How to use
+
+Install it at: []()
 
 An OpenAI API key with permissions to access the GPT-3 service is required before using. For more information on how to get a key, visit [OpenAI's website](https://openai.com/api/).
 
