@@ -7,6 +7,9 @@
   "displayName": "ai-rename",
   "description": "naming is one of the hardest things in programming, this extension helps to rename symbols in codes by using openAI",
   "version": "0.0.1",
+  "repository": {
+    "url": "https://github.com/paco0x/vscode-ai-rename"
+  },
   "engines": {
     "vscode": "^1.75.0"
   },
