@@ -17,7 +17,7 @@
     "commands": [
       {
         "command": "ai-rename.rename",
-        "title": "AI Rename: Rename by openAI",
+        "title": "AI Rename: Rename",
         "when": "activeEditor && editorTextFocus && !editorReadonly"
       }
     ],
