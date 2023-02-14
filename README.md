@@ -35,9 +35,10 @@ This extension contributes the following settings:
 
 ## Known Issues
 
--   The extension may not provide accurate or appropriate suggestions for all programming languages or symbols.
+-   May not provide accurate or appropriate suggestions for long functions.
 -   Not accurate when the variable is too short or document contains non-ascii characters.
 -   Sometimes the new name may be conflicted with the other symbol names.
+-   Lack of context of the whole project.
 
 ## TODOs
 
