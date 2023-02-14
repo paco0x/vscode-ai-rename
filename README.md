@@ -11,7 +11,7 @@ It uses OpenAI's GPT-3 API to suggest and apply new names.
 
 ## How to use
 
-Install it at: []()
+Install it at: [vscode Marketplace](https://marketplace.visualstudio.com/items?itemName=paco0x.ai-rename)
 
 An OpenAI API key with permissions to access the GPT-3 service is required before using. For more information on how to get a key, visit [OpenAI's website](https://openai.com/api/).
 
