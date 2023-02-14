@@ -17,11 +17,13 @@ An OpenAI API key with permissions to access the GPT-3 service is required befor
 
 Set your OpenAI key to `"aiRename.openAiApiKey"` in your vs code `settings.json` or `Open Ai Api Key` in the UI.
 
-Simply use command `"AI Rename: Rename` to generate the choices for the symbol under cursor, select an item and it'll rename it for you. See the Demo:
-
-![demo](./imgs/demo.gif)
+Simply use command `"AI Rename: Rename` to generate the choices for the symbol under cursor, select an item and it'll rename it for you.
 
 You can bind this command to any hotkeys you want.
+
+See the Demo:
+
+![demo](./imgs/demo.gif)
 
 ## Extension Settings
 
