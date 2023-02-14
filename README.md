@@ -45,6 +45,7 @@ This extension contributes the following settings:
 ## TODOs
 
 -   Only send surrounding text to openAI API.
+-   Unit tests
 
 ## Contributing
 
