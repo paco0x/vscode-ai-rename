@@ -15,9 +15,11 @@ Set your OpenAI key to `"aiRename.openAiApiKey"` in your vs code `settings.json`
 
 Uses OpenAI's GPT-3 API to suggest and apply new names for the symbol under cursor.
 
-Simply use command `"AI Rename: Rename` to generate the choices for the symbol under cursor, select an item and it'll rename it for you.
+Simply use command `"AI Rename: Rename` to generate the choices for the symbol under cursor, select an item and it'll rename it for you. See the Demo:
 
-You can bind this command to any hotkeys you want
+![demo](./imgs/demo.gif)
+
+You can bind this command to any hotkeys you want.
 
 ## Extension Settings
 
