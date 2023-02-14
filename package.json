@@ -1,5 +1,9 @@
 {
   "name": "ai-rename",
+  "author": {
+    "name": "Paco"
+  },
+  "publisher": "paco0x",
   "displayName": "ai-rename",
   "description": "naming is one of the hardest things in programming, this extension helps to rename symbols in codes by using openAI",
   "version": "0.0.1",
