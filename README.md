@@ -19,7 +19,7 @@ Set your OpenAI key to `"aiRename.openAiApiKey"` in your VS Code `settings.json`
 
 ## Usage
 
-Call up the command palette by pressing `cmd+shift+p` (mac) or `ctrl+shift+p` (win). Then use the command `AI Rename: Rename` to generate naming suggestions for the symbol under your cursor. Select an item and it will rename it automatically.
+Call up the command palette by pressing `cmd+shift+p` (mac) or `ctrl+shift+p` (win). Then use the command `AI Rename: Rename` to generate naming suggestions for the symbol under your cursor. Select an item and it will rename the symbol to the selected name automatically.
 
 You can also bind this command to a shortcut for convenience.
 
