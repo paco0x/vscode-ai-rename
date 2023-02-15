@@ -17,7 +17,7 @@ interface Response {
     choices: Array<Choice>;
 }
 
-export async function renameSymbol(
+export async function getRenameSuggestions(
     apiKey: string,
     n: number,
     maxToken: number,

@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { renameSymbol } from "./openai";
+import { getRenameSuggestions } from "./openai";
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -15,7 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
         }
         const config = vscode.workspace.getConfiguration("aiRename");
         const maxCharactersNum = config.get<number>("maxCharactersNum")!;
-        const maxChoicesNum = config.get<number>("maxChoicesNum")!;
+        const maxSuggestionsNum = config.get<number>("maxSuggestionsNum")!;
         const maxToken = config.get<number>("maxNameLength")!;
         const temperature = config.get<number>("temperature")!;
         const apiKey = config.get<string>("openAiApiKey");
@@ -42,8 +42,15 @@ export function activate(context: vscode.ExtensionContext) {
                     title: "AI Rename",
                 },
                 async progress => {
-                    progress.report({ message: "Loading naming choices from openAI..." });
-                    return await renameSymbol(apiKey, maxChoicesNum, maxToken, temperature, document.getText(), curPos);
+                    progress.report({ message: "Loading naming suggestions from openAI..." });
+                    return await getRenameSuggestions(
+                        apiKey,
+                        maxSuggestionsNum,
+                        maxToken,
+                        temperature,
+                        document.getText(),
+                        curPos
+                    );
                 }
             );
         } catch (error) {
