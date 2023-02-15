@@ -39,6 +39,7 @@ This extension contributes the following settings:
 
 ## Known Issues
 
+-   Cannot auto rename when there're syntax error in the code, this is same as the built-in vscode rename tool
 -   May not provide accurate or appropriate suggestions for long functions.
 -   Not accurate when the variable is too short or document contains non-ascii characters.
 -   Sometimes the new name may be conflicted with the other symbol names.
