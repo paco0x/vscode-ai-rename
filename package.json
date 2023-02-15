@@ -14,7 +14,7 @@
     "url": "https://github.com/paco0x/vscode-ai-rename",
     "type": "git"
   },
-  "icon": "imgs/icon.png",
+  "icon": "imgs/logo.png",
   "engines": {
     "vscode": "^1.75.0"
   },

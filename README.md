@@ -1,4 +1,4 @@
-![icon](./imgs/icon.png)
+![icon](./imgs/logo.png)
 
 # `ai-rename` Visual Studio Code Extension
 
