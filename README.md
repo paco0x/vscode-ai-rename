@@ -7,21 +7,21 @@
 
 `ai-rename` is a Visual Studio Code extension that leverages OpenAI's API to rename the symbol under cursor.
 
-It uses OpenAI's GPT-3 API to suggest and apply new names.
+It uses OpenAI's API to provide naming suggestions and apply new name automatically.
 
 ## How to use
 
 Install it at: [vscode Marketplace](https://marketplace.visualstudio.com/items?itemName=paco0x.ai-rename)
 
-An OpenAI API key with permissions to access the GPT-3 service is required before using. For more information on how to get a key, visit [OpenAI's website](https://openai.com/api/).
+An OpenAI API key is required before using. For more information on how to get a key, visit [OpenAI's website](https://openai.com/api/).
 
 Set your OpenAI key to `"aiRename.openAiApiKey"` in your vs code `settings.json` or `Open Ai Api Key` on UI:
 
 ![key-config](./imgs/key-config.png)
 
-Then, you can simply use command `AI Rename: Rename` to generate the choices for the symbol under cursor, select an item and it'll rename it for you.
+Then, you can simply call `⌘+⇧+p` to call out the command palette, and use command `AI Rename: Rename` to generate the choices for the symbol under cursor, select an item and it'll rename it for you.
 
-You can bind this command to any shortcuts for convenience.
+You can bind this command to a shortcut for convenience.
 
 See the Demo:
 
@@ -46,8 +46,9 @@ This extension contributes the following settings:
 
 ## TODOs
 
+-   Support right click menu item.
 -   Only send surrounding text to openAI API.
--   Unit tests
+-   Add tests.
 
 ## Contributing
 

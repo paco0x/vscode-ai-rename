@@ -5,11 +5,11 @@
     "name": "Paco"
   },
   "publisher": "paco0x",
-  "description": "Naming is one of the hardest things in programming, this extension helps to rename symbols in codes by using openAI",
+  "description": "Naming is one of the hardest things in programming, this extension helps to rename symbols in your code by using AI",
   "categories": [
     "Formatters"
   ],
-  "version": "0.0.9",
+  "version": "0.1.0",
   "repository": {
     "url": "https://github.com/paco0x/vscode-ai-rename",
     "type": "git"

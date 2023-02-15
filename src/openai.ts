@@ -5,7 +5,15 @@ interface Choice {
     text: string;
 }
 
+interface Error {
+    code: string;
+    message: string;
+    type: string;
+    param: string | null;
+}
+
 interface Response {
+    error: Error;
     choices: Array<Choice>;
 }
 
@@ -27,7 +35,7 @@ export async function renameSymbol(
         max_tokens: maxToken,
         stream: false,
     };
-    const response = await fetch("https://api.openai.com/v1/completions", {
+    const data = await fetch("https://api.openai.com/v1/completions", {
         headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${apiKey}`,
@@ -36,9 +44,12 @@ export async function renameSymbol(
         body: JSON.stringify(payload),
     });
 
-    const json: Response = await response.json();
+    const response: Response = await data.json();
+    if (response.error) {
+        throw new Error(JSON.stringify(response.error));
+    }
 
-    const choices = json.choices.reduce((prev, cur) => {
+    const choices = response.choices.reduce((prev, cur) => {
         const choice = cur.text.replace(/(\r\n|\n|\r)/gm, "");
         return prev.add(choice);
     }, new Set<string>());

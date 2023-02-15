@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
         const temperature = config.get<number>("temperature")!;
         const apiKey = config.get<string>("openAiApiKey");
         if (!apiKey) {
-            vscode.window.showErrorMessage("AI Rename: Please set OpenAI API key in configuration");
+            vscode.window.showErrorMessage("AI Rename: please set OpenAI API key in configuration");
             return;
         }
 
@@ -28,28 +28,38 @@ export function activate(context: vscode.ExtensionContext) {
         const curPos = editor.selection.active;
         if (document.getText().length > maxCharactersNum) {
             vscode.window.showErrorMessage(
-                "AI Rename: File too large, try increasing `aiRename.maxCharactersNum` in configuration"
+                "AI Rename: file too large, try increasing `aiRename.maxCharactersNum` in configuration"
             );
             return;
         }
 
-        let choices: Set<string>;
+        let choices = new Set<string>();
         try {
-            choices = await renameSymbol(apiKey, maxChoicesNum, maxToken, temperature, document.getText(), curPos);
-            console.log("new names: ", choices);
+            choices = await vscode.window.withProgress(
+                {
+                    location: vscode.ProgressLocation.Notification,
+                    cancellable: true,
+                    title: "AI Rename",
+                },
+                async progress => {
+                    progress.report({ message: "Loading naming choices from openAI..." });
+                    return await renameSymbol(apiKey, maxChoicesNum, maxToken, temperature, document.getText(), curPos);
+                }
+            );
         } catch (error) {
-            vscode.window.showErrorMessage(`AI Rename: Request failed: ${error}`);
+            vscode.window.showErrorMessage(`AI Rename: request failed -> ${error}`);
             return;
         }
 
         if (choices.size === 0) {
-            vscode.window.showErrorMessage("AI Rename: Failed to generate renaming choices");
+            vscode.window.showErrorMessage("AI Rename: failed to generate renaming choices");
             return;
         }
 
+        console.log("new names: ", choices);
         const pick = await vscode.window.showQuickPick([...choices]);
         if (!pick) {
-            console.log("AI Rename: User canceled");
+            console.log("AI Rename: user canceled");
             return;
         }
 
