@@ -1,4 +1,4 @@
-![icon](./imgs/logo.png)
+![icon](./assets/logo.png)
 
 # `ai-rename` Visual Studio Code Extension
 
@@ -17,7 +17,7 @@ An OpenAI API key is required before using. For more information on how to get a
 
 Set your OpenAI key to `"aiRename.openAiApiKey"` in your vs code `settings.json` or `Open Ai Api Key` on UI:
 
-![key-config](./imgs/key-config.png)
+![key-config](./assets/key-config.png)
 
 Then, you can simply call `cmd+shift+p`(mac) or `ctrl+shift+p`(win) to call out the command palette, and use command `AI Rename: Rename` to generate the naming suggestions for the symbol under your cursor, select an item and it'll rename it automatically.
 
@@ -25,7 +25,7 @@ You can also bind this command to a shortcut for convenience.
 
 See the Demo:
 
-![demo](./imgs/demo.gif)
+![demo](./assets/demo.gif)
 
 ## Extension Settings
 

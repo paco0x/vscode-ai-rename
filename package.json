@@ -9,12 +9,12 @@
   "categories": [
     "Formatters"
   ],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "url": "https://github.com/paco0x/vscode-ai-rename",
     "type": "git"
   },
-  "icon": "imgs/logo.png",
+  "icon": "assets/logo.png",
   "engines": {
     "vscode": "^1.75.0"
   },
