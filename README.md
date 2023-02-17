@@ -39,11 +39,8 @@ This extension contributes the following settings:
 
 ## Known Issues
 
--   Cannot auto-rename when there are syntax errors in the code. This is the same as the built-in VS Code rename tool.
--   May not provide accurate or appropriate suggestions for long functions.
--   Not accurate when the variable is too short or the document contains non-ASCII characters.
--   Sometimes, the new name may conflict with other symbol names.
--   Lack of context of the whole project.
+For now, this extension is using the `text-davinci-003` model on openAI, which is lesser powerful than chatGPT's. The result sometimes doesn't make sense.
+Will switch to chatGPT's model if it's public usable or there's an elegant way to use it.
 
 ## To-Do List
 
