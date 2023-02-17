@@ -23,9 +23,10 @@ export async function getRenameSuggestions(
     maxToken: number,
     temperature: number,
     codeText: string,
+    symbol: string,
     pos: Position
 ) {
-    const prompt = `I'll give a bunch of code in {[@@(CODE)@@]} format, CODE is the code text you needed. Rename the symbol at the ${pos.line} line, the ${pos.character} character in CODE, the new name should follow the naming convention of the programming language in the code, and should be based on the context of the code. The new name cannot be conflicted with other names in the context of the symbol. You only need to return the new name without any other string. {[@@(${codeText})@@]} `;
+    const prompt = `I'll give a bunch of code in {[@@(CODE)@@]} format, CODE is the code text you needed. Rename the symbol at the ${pos.line} line, the ${pos.character} character in CODE, the original name is ${symbol}. The new name should follow the naming convention of the programming language, and should be a meaningful name based on the context of the code. The new name cannot be conflicted with other names in the scope of the symbol and should be different from the original name. You only need to return the new name without any other word. {[@@(${codeText})@@]}`;
 
     const payload = {
         model: "text-davinci-003",

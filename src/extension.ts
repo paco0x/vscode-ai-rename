@@ -26,6 +26,8 @@ export function activate(context: vscode.ExtensionContext) {
 
         const document = editor.document;
         const curPos = editor.selection.active;
+        const symbol = document.getText(document.getWordRangeAtPosition(curPos));
+
         if (document.getText().length > maxCharactersNum) {
             vscode.window.showErrorMessage(
                 "AI Rename: file too large, try increasing `aiRename.maxCharactersNum` in configuration"
@@ -49,6 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
                         maxToken,
                         temperature,
                         document.getText(),
+                        symbol,
                         curPos
                     );
                 }
