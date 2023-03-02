@@ -9,7 +9,7 @@
   "categories": [
     "Formatters"
   ],
-  "version": "0.2.0",
+  "version": "0.2.1",
   "repository": {
     "url": "https://github.com/paco0x/vscode-ai-rename",
     "type": "git"
@@ -51,7 +51,7 @@
         "aiRename.openAiTemperature": {
           "displayName": "Temperature param in openAI requests",
           "type": "number",
-          "default": 1.5,
+          "default": 1,
           "description": "What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic."
         },
         "aiRename.maxCharactersNum": {

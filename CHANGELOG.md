@@ -4,6 +4,10 @@ All notable changes to the "ai-rename" extension will be documented in this file
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.2.1]
+
+-   Change default value of `aiRename.openAiTemperature` to 1.
+
 ## [0.2.0]
 
 -   Use chatGPT model "gpt-3.5-turbo" for better results
