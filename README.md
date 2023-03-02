@@ -5,7 +5,7 @@
 > "There are only two hard things in Computer Science: cache invalidation and naming things."
 > -- Phil Karlton
 
-`ai-rename` is a Visual Studio Code extension that leverages OpenAI's API to rename the symbol under the cursor. It uses OpenAI's API to provide naming suggestions and apply a new name automatically.
+`ai-rename` is a Visual Studio Code extension that uses OpenAI's API to rename the symbol under the cursor. It can provide naming suggestions and apply a new name automatically. Currently it uses the model "gpt-3.5-turbo", same as chatGPT's.
 
 ## Installation
 
