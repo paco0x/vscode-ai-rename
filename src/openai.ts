@@ -33,15 +33,15 @@ export async function getRenameSuggestions(
     symbol: string,
     pos: Position,
 ) {
-    const systemInstruction =
-        "You're a coding assistant. I'll give you a bunch of code in {[@@(CODE)@@]} format, CODE is the code you need to analyze. You'll need to give me rename suggestions of the variables or functions in the code. The new name should follow the naming convention of the programming language, and should be a meaningful name based on the context of the code. The new name cannot be conflicted with other names in the scope of the symbol and should be different from the original name."
+    const systemMessage =
+        "You're a coding assistant. I'll give you a bunch of code in {[@@(CODE)@@]} format, where CODE is the code you need to analyze. Please provide suggestions for renaming the variables or function name. The new names should be meaningful and consistent with the naming conventions used for other names in the same scope, and avoid conflicts with existing variable names. Please ensure that the new names are not identical to the original names."
 
     const payload = {
         model: "gpt-3.5-turbo",
         messages: [
             {
                 role: "system",
-                content: systemInstruction,
+                content: systemMessage,
             },
             {
                 role: "user",

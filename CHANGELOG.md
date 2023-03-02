@@ -4,6 +4,10 @@ All notable changes to the "ai-rename" extension will be documented in this file
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.2.2]
+
+-   Only send code text around current cursor to openAI if the characters in the file is too much.
+
 ## [0.2.1]
 
 -   Change default value of `aiRename.openAiTemperature` to 1.

@@ -28,11 +28,12 @@ export function activate(context: vscode.ExtensionContext) {
         const curPos = editor.selection.active
         const symbol = document.getText(document.getWordRangeAtPosition(curPos))
 
-        if (document.getText().length > maxCharactersNum) {
-            vscode.window.showErrorMessage(
-                "AI Rename: file too large, try increasing `aiRename.maxCharactersNum` in configuration",
+        let documentText = document.getText()
+        if (documentText.length > maxCharactersNum) {
+            const range = document.validateRange(
+                new vscode.Range(Math.max(curPos.line - 30, 0), 0, curPos.line + 30, 0),
             )
-            return
+            documentText = document.getText(range)
         }
 
         let choices = new Set<string>()
@@ -50,7 +51,7 @@ export function activate(context: vscode.ExtensionContext) {
                         maxSuggestionsNum,
                         maxToken,
                         temperature,
-                        document.getText(),
+                        documentText,
                         symbol,
                         curPos,
                     )
