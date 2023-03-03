@@ -39,8 +39,7 @@ This extension contributes the following settings:
 
 ## Known Issues
 
-For now, this extension is using the `text-davinci-003` model on openAI, which is lesser powerful than chatGPT's. The result sometimes doesn't make sense.
-Will switch to chatGPT's model if it's public usable or there's an elegant way to use it.
+Sometimes the renaming process may fail. This is because OpenAI's API is not stable. If you encounter this issue, please try again or adjust the temperature parameter in settings.
 
 ## To-Do List
 
